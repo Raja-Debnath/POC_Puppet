@@ -1,0 +1,16 @@
+{
+  "name": "puppet",
+  "version": "1.0.0",
+  "description": "Puppeter Test and Poc Concept",
+  "main": "Server.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon Server.js"
+  },
+  "author": "Raja Debnath",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^3.1.4",
+    "puppeteer": "^23.2.0"
+  }
+}
