@@ -11,7 +11,7 @@ const targetUrl ="https://blinkit.com/prn/amul-taaza-toned-fresh-milk/prid/19512
   });
   const page = await browser.newPage();
 
-  // Navigate the page to a URL.
+  
   await page.goto(targetUrl);
   await page.reload()
 
@@ -22,11 +22,11 @@ const targetUrl ="https://blinkit.com/prn/amul-taaza-toned-fresh-milk/prid/19512
 
   console.log(priceText);
 
-//   await browser.close();
+  await browser.close();
 })();
 
 // }
-blinkit()
+// blinkit()
 
 // dev note blinkit after opening in new browser 
 // continoue to web pops and code breaks 

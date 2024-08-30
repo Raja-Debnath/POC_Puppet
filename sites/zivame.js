@@ -1,6 +1,6 @@
 import puppeteer from "puppeteer";
 
-// function zivame(){
+function zivame(){
 
     const targetUrl ="https://www.zivame.com/zivame-high-compression-short-length-shaper-bodysuit-sky-captain.html?trksrc=similarcolors&trkid=product";
     (async () => {
@@ -15,24 +15,23 @@ import puppeteer from "puppeteer";
       await page.reload()
     
       const priceText = await page.evaluate(() => {
-        const priceElement = document.getElementsByClassName("prd-mprice prd-mprice-new z-bold left pd-r10 c-hover z-pink pd-b5")[0].innerText
-        return priceElement //? priceElement.innerText : "not fetching";
+        const priceElement = document.getElementsByClassName("prd-mprice prd-mprice-new z-bold left pd-r10 c-hover z-pink pd-b5")[0].innerHTML
+        return priceElement ? priceElement.innerText : "not fetching";
       });
     
       console.log(priceText);
     
-    //   await browser.close();
+      await browser.close();
     })();
-    // }
+    }
     // export default zivame
-    // zivame()
+    zivame()
 
+// /* dev note 
 
-/* dev note 
+// for every product page price className is same 
 
-for every product page price className is same 
+// document.getElementsByClassName("prd-mprice prd-mprice-new z-bold left pd-r10 c-hover z-pink pd-b5")[0].innerText
 
-document.getElementsByClassName("prd-mprice prd-mprice-new z-bold left pd-r10 c-hover z-pink pd-b5")[0].innerText
-
-scrape fail because of bot [ auto check if iom humain ] maybe cloudflair
-*/
+// scrape fail because of bot [ auto check if iom humain ] maybe cloudflair
+// */
