@@ -1,9 +1,11 @@
+
+
 import puppeteer from "puppeteer";
 
 
-// function blinkit() {
+// function ocado() {
 
-const targetUrl ="https://blinkit.com/prn/amul-taaza-toned-fresh-milk/prid/19512";
+const targetUrl ="https://www.ocado.com/products/warburtons-crumpets-27524011";
 (async () => {
   const browser = await puppeteer.launch({
     headless: false,
@@ -16,17 +18,17 @@ const targetUrl ="https://blinkit.com/prn/amul-taaza-toned-fresh-milk/prid/19512
   await page.reload()
 
   const priceText = await page.evaluate(() => {
-    const priceElement = document.getElementsByClassName("ProductVariants__VariantsCardSlider-sc-1unev4j-2 bvjvGr")[0].innerText
+    const priceElement = document.getElementsByClassName("bop-price__current bop-price__current--offer")[0].innerText
     return priceElement //? priceElement.innerText : "not fetching";
   });
 
   console.log(priceText);
 
-  // await browser.close();
+  await browser.close();
 })();
 
 // }
-// blinkit()
+// ocado()
 
 // dev note blinkit after opening in new browser 
 // continoue to web pops and code breaks 

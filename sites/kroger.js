@@ -1,9 +1,11 @@
+
+
 import puppeteer from "puppeteer";
 
 
-// function blinkit() {
+// function kroger() {
 
-const targetUrl ="https://blinkit.com/prn/amul-taaza-toned-fresh-milk/prid/19512";
+const targetUrl ="https://www.kroger.com/p/doritos-nacho-cheese-flavored-tortilla-chips/0002840051646?fulfillment=PICKUP";
 (async () => {
   const browser = await puppeteer.launch({
     headless: false,
@@ -16,17 +18,17 @@ const targetUrl ="https://blinkit.com/prn/amul-taaza-toned-fresh-milk/prid/19512
   await page.reload()
 
   const priceText = await page.evaluate(() => {
-    const priceElement = document.getElementsByClassName("ProductVariants__VariantsCardSlider-sc-1unev4j-2 bvjvGr")[0].innerText
+    const priceElement = document.getElementsByClassName("kds-Price kds-Price--alternate mb-8")[0].innerText
     return priceElement //? priceElement.innerText : "not fetching";
   });
 
   console.log(priceText);
 
-  // await browser.close();
+  await browser.close();
 })();
 
 // }
-// blinkit()
+// kroger()
 
 // dev note blinkit after opening in new browser 
 // continoue to web pops and code breaks 
