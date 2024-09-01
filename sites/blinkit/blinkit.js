@@ -16,7 +16,7 @@ const targetUrl ="https://blinkit.com/prn/amul-taaza-toned-fresh-milk/prid/19512
   await page.reload()
 
   const priceText = await page.evaluate(() => {
-    const priceElement = document.getElementsByClassName("ProductVariants__VariantsCardSlider-sc-1unev4j-2 bvjvGr")[0].innerText
+    const priceElement = document.getElementsByClassName("tw-text-300 tw-font-extrabold")[0].innerText
     return priceElement //? priceElement.innerText : "not fetching";
   });
 
